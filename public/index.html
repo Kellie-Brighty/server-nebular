@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Server Nebular</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+    <div class="card" id="status-card">
+      <div class="pulse-ring"></div>
+      <div class="status-icon" id="status-icon">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+        </svg>
+      </div>
+      <h1 id="status-title">Checking server...</h1>
+      <p id="status-message" class="message">Connecting...</p>
+      <div class="details" id="details">
+        <div class="detail-item">
+          <span class="label">Status</span>
+          <span class="value" id="detail-status">—</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">Uptime</span>
+          <span class="value" id="detail-uptime">—</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">Last Checked</span>
+          <span class="value" id="detail-timestamp">—</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
