@@ -8,8 +8,8 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
-// Serve the test-syncship frontend
-app.use(express.static(path.join(__dirname, "..", "test-syncship", "public")));
+// Serve the server's own frontend
+app.use(express.static(path.join(__dirname, "public")));
 
 // API endpoint to check server status
 app.get("/api/status", (req, res) => {
@@ -19,13 +19,6 @@ app.get("/api/status", (req, res) => {
     timestamp: new Date().toISOString(),
     uptime: process.uptime(),
   });
-});
-
-// Fallback to serve the frontend
-app.get("/{*splat}", (req, res) => {
-  res.sendFile(
-    path.join(__dirname, "..", "test-syncship", "public", "index.html")
-  );
 });
 
 app.listen(PORT, () => {
